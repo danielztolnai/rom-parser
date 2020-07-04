@@ -112,6 +112,7 @@ next:
 	       pcir->pcir_rev, pcir->rom_rev);
 
 	if (pcir->type == 3) {
+		printf("\t\tEFI image offset %xh\n", header->efi_offset);
 		int valid = header->header_sig == 0x0ef1;
 		printf("\t\tEFI: Signature %sValid",
 		       !valid ? "NOT " : "");
